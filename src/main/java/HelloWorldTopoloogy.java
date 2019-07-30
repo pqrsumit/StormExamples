@@ -21,18 +21,16 @@ public class HelloWorldTopoloogy   {
         Config conf = new Config();
         conf.setDebug(true);
 
+
+
         //Create a local cluster & submit topology
         LocalCluster localCluster = new LocalCluster();
-        try{
+
             localCluster.submitTopology("Hello-First-Topology", conf, builder.createTopology());
             //Thread.sleep(1000);
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-            toLog.severe(e.getMessage());
-        }finally {
+
           localCluster.shutdown();
-        }
+
 
     }
 }
